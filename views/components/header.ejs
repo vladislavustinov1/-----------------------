@@ -1,0 +1,37 @@
+<header id="header">
+  <div class="header__container">
+    <div id="header__container_brand">
+      <a href="#" id="brand__link"
+        ><img src="./images/logo.png" alt="CW:RP"
+      /></a>
+    </div>
+    <nav id="header__container_nav">
+      <ul id="nav__menu">
+        <li class="menu__list">
+          <a href="/" class="list__links">Главная</a>
+        </li>
+        <li class="menu__list">
+          <a href="/about" class="list__links">О проекте</a>
+        </li>
+        <li class="menu__list">
+          <a href="#" class="list__links">ЧАВО</a>
+        </li>
+        <li class="menu__list">
+          <a href="#" class="list__links">Дискорд</a>
+        </li>
+        <li class="menu__list">
+          <% if (locals.user) { %>
+          <a href="#" class="list__links">Профиль</a>
+          <% } else { %>
+          <a href="/login" class="list__links">Войти</a>
+          <% } %>
+        </li>
+      </ul>
+    </nav>
+    <div id="header__container_button">
+      <a href="steam://connect/82.202.249.171:27315" class="list__links"
+        >Играть!</a
+      >
+    </div>
+  </div>
+</header>

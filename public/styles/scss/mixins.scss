@@ -1,0 +1,67 @@
+@mixin fontsForLinks {
+  font-family: "SW_font", sans-serif;
+  color: #cacee2;
+  font-size: 20px;
+  line-height: 2;
+  text-decoration: none;
+  text-align: center;
+  z-index: 4;
+  &:hover {
+    color: black;
+  }
+}
+@mixin fontsForText($margin-left, $color) {
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: $color;
+  margin-left: $margin-left;
+}
+@mixin fontsForHeaders {
+  font-family: "SW_font", sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #c0b534;
+}
+@mixin deleteStandartMargins {
+  margin: 0;
+  padding: 0;
+}
+@mixin widthHeightAndMargins($width, $height, $margin) {
+  margin: $margin;
+  width: $width;
+  height: $height;
+}
+@mixin dislplays($display: block) {
+  display: $display;
+}
+
+@mixin borders($borders...) {
+  border: $borders;
+}
+
+@mixin rainDisplayAndPosition(
+  $width,
+  $height,
+  $left,
+  $top,
+  $background-color,
+  $z-index,
+  $position
+) {
+  position: $position;
+  z-index: $z-index;
+  width: $width;
+  height: $height;
+  left: $left;
+  top: $top;
+  background-color: $background-color;
+}
+
+@mixin forBeforOrAfter {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
