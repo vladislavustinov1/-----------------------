@@ -374,3 +374,78 @@ body {
     cursor: pointer;
   }
 }
+
+.login__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 729px;
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 996px;
+  }
+  .form__container {
+    display: flex;
+    flex-direction: column;
+  }
+  input:not([type="submit"]) {
+    width: 845px;
+    height: 50px;
+    border-radius: 100px;
+    margin-bottom: 85px;
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 20px;
+  }
+  input:not([type="password"]) {
+    font-family: "SW_font", sans-serif;
+  }
+  input:not([type="text"])::placeholder {
+    font-family: "SW_font", sans-serif;
+  }
+  #auth {
+    background-color: #008000;
+    border: none;
+    border-radius: 100px;
+    width: 439px;
+    height: 112px;
+    font-family: "SW_font", sans-serif;
+    font-size: 40px;
+    color: white;
+    transition: all 0.5s;
+  }
+  #auth:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+  }
+  label {
+    @include fontsForText(0, white);
+    margin-left: 25px;
+  }
+  .login__variables {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 75px;
+    .variables__register {
+      @include fontsForText(0, white);
+      max-height: 23px;
+      p {
+        margin: 0;
+      }
+      a {
+        text-decoration: none;
+        transition: all 0.5s;
+      }
+      a:hover {
+        color: skyblue;
+      }
+    }
+  }
+}

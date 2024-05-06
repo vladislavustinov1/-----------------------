@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
       ? next(new Error("Невозможно найти пользователя"))
       : (req.user = res.locals.user = user);
   } else if (req.session.passport) {
-    res.locals.user = req.session.passport.user;
+    req.user = res.locals.user = req.session.passport.user;
     return next();
   } else {
     return next();

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/css/normalize.css" />
+    <link rel="stylesheet" href="./styles/css/style.css" />
+    <title><%- title %></title>
+  </head>
+  <body>
+    <%- include("components/header") %>
+    <div class="login__container">
+      <form action="/login/auth" method="post" class="login__form">
+        <div class="form__container">
+          <label for="login">Введите логин</label>
+          <input
+            type="text"
+            name="login"
+            id="login"
+            placeholder="GeneralGeneralov"
+          />
+          <label for="password">Введите пароль</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Пароль"
+          />
+        </div>
+        <input type="submit" value="Авторизоваться!" id="auth" />
+      </form>
+      <ul class="login__variables">
+        <li class="variables__register">
+          <p>
+            Забыли логин или пароль? Нажмите
+            <a href="/register" class="/recovery">сюда</a> для восстановления.
+          </p>
+        </li>
+        <li class="variables__register">
+          <p>
+            Нет аккаунта? <a href="/register">Зарегистрируйтесь</a> прямо
+            сейчас!
+          </p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
