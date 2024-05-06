@@ -9,5 +9,45 @@
   </head>
   <body>
     <%- include("components/header") %>
+    <div class="register__container">
+      <form action="/register/auth" class="register__form">
+        <div class="form__container_register">
+          <label for="email">Введите почту</label>
+          <input type="email" name="email" id="email" />
+          <label for="login">Введите логин</label>
+          <input type="text" name="login" id="login" />
+          <label for="password">Введите пароль</label>
+          <input type="password" name="password" id="password" />
+          <label for="again_pswrd">Повторите пароль</label>
+          <input type="password" name="again_pswrd" id="again_pswrd" />
+          <ul class="checkboxes__list">
+            <li class="checkboxes__elements">
+              <input
+                type="checkbox"
+                name="check__rules"
+                id="check__rules"
+              /><label for="check__rules"
+                >Я согласен с Правилами проекта и Соглашением
+                пользователя</label
+              >
+            </li>
+            <li class="checkboxes__elements">
+              <input
+                type="checkbox"
+                name="check__email"
+                id="check__email"
+              /><label for="check__email"
+                >Я хочу получать информацию об обновлениях на почту</label
+              >
+            </li>
+          </ul>
+          <div class="register__buttons">
+            <iframe src="/images/IMG_0808.gif" frameborder="0"></iframe>
+            <input type="submit" value="Зарегистрироваться!" />
+            <iframe src="/images/IMG_0808.gif" frameborder="0"></iframe>
+          </div>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

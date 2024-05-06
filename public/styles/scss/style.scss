@@ -4,11 +4,13 @@
   font-family: SW_font;
   src: url("../../fonts/SW_font.otf") format("opentype");
 }
+* {
+  box-sizing: border-box;
+}
 html {
   overflow-x: hidden;
 }
 body {
-  box-sizing: border-box;
   background-image: url(../../images/bg.jpg);
 }
 
@@ -380,11 +382,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 729px;
+  height: 44vw;
   .login__form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 996px;
   }
   .form__container {
@@ -445,6 +448,77 @@ body {
       }
       a:hover {
         color: skyblue;
+      }
+    }
+  }
+}
+.register__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55vw;
+  .form__container_register {
+    display: flex;
+    flex-direction: column;
+    .register__form {
+    }
+    .register__buttons {
+      display: flex;
+      align-items: center;
+      align-self: center;
+      gap: 20px;
+      iframe {
+        width: 102px;
+        height: 100px;
+      }
+      input {
+        width: 378px;
+        height: 77px;
+        background-color: #008000;
+        color: white;
+        font-size: 25px;
+        border: none;
+        border-radius: 100px;
+        transition: all 0.5s;
+      }
+      input:hover {
+        cursor: pointer;
+        color: black;
+        background-color: white;
+      }
+    }
+    input:is([type="text"], [type="email"], [type="password"]) {
+      width: 845px;
+      height: 50px;
+      border-radius: 100px;
+      margin-bottom: 85px;
+      margin-top: 10px;
+      padding-left: 20px;
+      font-size: 20px;
+    }
+    input:not([type="password"]) {
+      font-family: "SW_font", sans-serif;
+    }
+    input:not([type="text"])::placeholder {
+      font-family: "SW_font", sans-serif;
+    }
+    label {
+      @include fontsForText(0, white);
+      margin-left: 25px;
+    }
+    .checkboxes__list {
+      list-style-type: none;
+    }
+    .checkboxes__elements {
+      display: flex;
+      align-items: center;
+      margin-bottom: 26px;
+      input:is([type="checkbox"]) {
+        width: 25px;
+        height: 25px;
+      }
+      label {
+        margin-left: 17px;
       }
     }
   }
