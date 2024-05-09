@@ -1,16 +1,18 @@
 const { Sequelize } = require("sequelize");
+require("dotenv").config();
 
-const sequelize = new Sequelize(
-  `diplomaDB`,
+const sequelizeDB = new Sequelize(
+  `diplom`,
   process.env.DB_LOGIN,
   process.env.DB_PASSWORD,
   {
-    host: "localhost",
-    dialect: "mysql",
+    dialect: "postgresql",
+    host: "127.0.0.1",
+    port: "5432",
   }
 );
 
-const User = sequelize.define("users", {
+const User = sequelizeDB.define("users", {
   uuid: {
     type: Sequelize.STRING,
     primaryKey: true,
@@ -31,4 +33,15 @@ const User = sequelize.define("users", {
     allowNull: false,
     unique: true,
   },
+  role: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  avatar: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    defaultValue: "/images/avatars/default.jpg",
+  },
 });
+
+module.exports = { User, sequelizeDB };

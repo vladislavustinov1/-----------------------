@@ -1,6 +1,6 @@
 const express = require("express");
 const session = require("express-session");
-// const userSession = require("./middleware/user_session");
+const userSession = require("./middlewares/user_session");
 const path = require("path");
 const favicon = require("express-favicon");
 const routes = require("./routes/routers");
@@ -11,7 +11,7 @@ const passport = require("passport");
 // const passportFunctionVKontakte = require("./middleware/passport_vk");
 // const passportFunctionGithub = require("./middleware/passport_github");
 const cookieSession = require("cookie-parser");
-// const { sequelize } = require("./config/config");
+const { sequelizeDB } = require("./config/db");
 
 const app = express();
 app.set("view engine", "ejs");
@@ -30,7 +30,7 @@ app.use(
   })
 );
 app.use(cookieSession());
-// app.use(userSession);
+app.use(userSession);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -56,6 +56,6 @@ app.use(
 app.use(routes);
 
 app.listen(port, async () => {
-  //   await sequelize.sync();
+  await sequelizeDB.sync({ force: true });
   console.log(`Server running on port ${port}`);
 });

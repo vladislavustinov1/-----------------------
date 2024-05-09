@@ -1,5 +1,9 @@
 const express = require("express");
 const routes = express.Router();
+const registerModule = require("../controllers/register");
+const loginModule = require("../controllers/login");
+const validationModule = require("../middlewares/validation");
+const profileModule = require("../controllers/profile");
 
 routes.get("/", function (req, res) {
   const role = req.session.role;
@@ -20,13 +24,17 @@ routes.get("/login", function (req, res) {
     return res.render(`login`, { title: "Вход", role: role });
   }
 });
+routes.post("/login", loginModule.login);
+
 routes.get("/questions", function (req, res) {
   const role = req.session.role;
   return res.render(`QandA`, { title: "ЧАВО", role: role });
 });
-routes.get("/register", function (req, res) {
-  const role = req.session.role;
-  return res.render(`register`, { title: "Регистрация", role: role });
-});
+
+routes.get("/register", registerModule.form);
+
+routes.post("/register", validationModule, registerModule.register);
+
+routes.get("/profile", profileModule.getProfile);
 
 module.exports = routes;
