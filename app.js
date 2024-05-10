@@ -56,6 +56,6 @@ app.use(
 app.use(routes);
 
 app.listen(port, async () => {
-  await sequelizeDB.sync({ force: true });
+  await sequelizeDB.sync();
   console.log(`Server running on port ${port}`);
 });

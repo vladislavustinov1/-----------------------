@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/css/normalize.css" />
+    <link rel="stylesheet" href="../styles/css/style.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <header id="header">
+      <div class="header__container">
+        <div id="header__container_brand">
+          <a href="#" id="brand__link"
+            ><img src="../images/logo.png" alt="CW:RP"
+          /></a>
+        </div>
+        <nav id="header__container_nav">
+          <ul id="nav__menu">
+            <li class="menu__list">
+              <a href="/" class="list__links">Главная</a>
+            </li>
+            <li class="menu__list">
+              <a href="/questions" class="list__links">ЧАВО</a>
+            </li>
+            <li class="menu__list">
+              <a href="#" class="list__links">Дискорд</a>
+            </li>
+            <% if (!locals.user) { %>
+            <li class="menu__list">
+              <a href="/login" class="list__links">Вход</a>
+            </li>
+            <% } else { %>
+            <li class="menu__list">
+              <a href="/profile" class="list__links">Профиль</a>
+            </li>
+            <% } %>
+          </ul>
+        </nav>
+        <div id="header__container_button">
+          <a href="steam://connect/82.202.249.171:27315" class="list__links"
+            >Играть!</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <div class="post__form_container">
+      <h2 class="create__desc">
+        Желаете создать свою заметку? Сделайте это в форме ниже!
+      </h2>
+      <form action="/profile/createPost" method="post" class="post__form">
+        <label for="title">Введите заголовок</label>
+        <input type="text" name="title" id="title" />
+        <label for="text">Введите текст поста</label>
+        <input type="text" name="text" id="text" style="display: none" />
+        <textarea
+          oninput="document.querySelector('input#text').value = this.value;"
+          placeholder="Введите текст заметки"
+          class="post__textarea"
+        ></textarea>
+        <input
+          type="submit"
+          value="Опубликовать запись"
+          class="post__create_button"
+        />
+      </form>
+    </div>
+  </body>
+</html>

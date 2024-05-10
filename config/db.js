@@ -42,6 +42,31 @@ const User = sequelizeDB.define("users", {
     allowNull: false,
     defaultValue: "/images/avatars/default.jpg",
   },
+  status: {
+    type: Sequelize.STRING,
+    allowNull: true,
+  },
 });
 
-module.exports = { User, sequelizeDB };
+const Post = sequelizeDB.define(`posts`, {
+  uuid: {
+    type: Sequelize.STRING,
+    primaryKey: true,
+    allowNull: false,
+    unique: true,
+  },
+  title: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  text: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  author_email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+});
+
+module.exports = { User, Post, sequelizeDB };

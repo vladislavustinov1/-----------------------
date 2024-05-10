@@ -40,6 +40,7 @@ async function registerUser(dataFromForm, callback) {
       email: dataFromForm.email,
       role: "user",
       avatar: undefined,
+      status: null,
     });
     return callback(null, user);
   }

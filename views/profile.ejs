@@ -9,5 +9,44 @@
   </head>
   <body>
     <%- include("components/header") %>
+    <div class="profile__container">
+      <div class="profile__avatar">
+        <i class="fa-solid fa-pencil"></i>
+        <img src="<%= avatar %>" alt="Аватар" class="avatar" />
+      </div>
+      <div class="profile__text">
+        <h2 class="profile__name">Никнейм: <%= username %></h2>
+        <p class="profile__email">Почта: <%= email %></p>
+        <div class="profile__desc">
+          <p class="desc__text">
+            Описание профиля:
+            <i
+              ><% if (status) {%> <%= status %> <% } else { %> Здесь пока
+              пусто... <% } %></i
+            >
+          </p>
+          <div class="desc__buttons">
+            <p class="buttons__alt">(максимум 255 символов)</p>
+            <a href="" class="buttons__change">Изменить</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 class="posts__head">Ваши недавние заметки:</h2>
+    <div class="posts__container">
+      <% posts.forEach((onePost) => { %>
+      <div class="post__container">
+        <h2 class="post__head"><%= onePost.dataValues.title %></h2>
+        <p class="post__text"><%= onePost.dataValues.text %></p>
+      </div>
+      <% }); %>
+      <a href="/profile/createPost" class="post__create"
+        ><button class="post__button">Добавить новую заметку</button></a
+      >
+    </div>
+    <script
+      src="https://kit.fontawesome.com/4f54e993f9.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

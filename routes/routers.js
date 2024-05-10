@@ -4,6 +4,7 @@ const registerModule = require("../controllers/register");
 const loginModule = require("../controllers/login");
 const validationModule = require("../middlewares/validation");
 const profileModule = require("../controllers/profile");
+const postModule = require("../controllers/post");
 
 routes.get("/", function (req, res) {
   const role = req.session.role;
@@ -36,5 +37,8 @@ routes.get("/register", registerModule.form);
 routes.post("/register", validationModule, registerModule.register);
 
 routes.get("/profile", profileModule.getProfile);
+
+routes.get("/profile/createPost", postModule.getPage);
+routes.post("/profile/createPost", postModule.createPost);
 
 module.exports = routes;

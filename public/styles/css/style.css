@@ -761,4 +761,196 @@ body {
   margin-top: -5px;
   color: #000;
   padding: 20px 30px 10px;
+}
+
+.profile__container {
+  display: flex;
+  max-width: 1745px;
+  margin-top: 50px !important;
+  margin: 0 auto;
+  position: relative;
+}
+.profile__container .profile__avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 55px;
+  position: relative;
+}
+.profile__container .profile__avatar .fa-pencil {
+  position: absolute;
+  opacity: 0;
+}
+.profile__container .profile__avatar .avatar {
+  border-radius: 100px;
+  max-width: 550px;
+  max-height: 550px;
+  background-color: black;
+  transition: all 0.3s;
+}
+.profile__container .profile__avatar .avatar:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0.5;
+}
+.profile__container .profile__text .profile__name {
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 0;
+  font-size: 36px;
+}
+.profile__container .profile__text .profile__email {
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 0;
+  font-size: 36px;
+}
+.profile__container .profile__text .profile__desc {
+  position: absolute;
+  bottom: 0;
+  width: 1140px;
+}
+.profile__container .profile__text .profile__desc .desc__text {
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 0;
+  font-size: 36px;
+}
+.profile__container .profile__text .profile__desc .desc__buttons {
+  display: flex;
+  justify-content: space-between;
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 0;
+  font-size: 24px;
+}
+.profile__container .profile__text .profile__desc .desc__buttons .buttons__alt {
+  margin: 0;
+}
+.profile__container .profile__text .profile__desc .desc__buttons .buttons__change {
+  max-height: 27.6px;
+}
+
+.posts__head {
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 0;
+  margin-left: 100px;
+  margin-top: 260px;
+}
+
+.posts__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.posts__container .post__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #d9d9d9;
+  border-radius: 100px;
+  height: 279px;
+  width: 1752px;
+}
+.posts__container .post__container .post__head {
+  font-size: 36px;
+  font-family: "SW_font", sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #c0b534;
+}
+.posts__container .post__container .post__text {
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: black;
+  margin-left: 0;
+  font-size: 26px;
+}
+.posts__container .post__create {
+  margin: 0 auto;
+}
+.posts__container .post__create button {
+  border-radius: 100px;
+  border: none;
+  background-color: #008000;
+  width: 400px;
+  height: 75px;
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  transition: all 0.4s;
+}
+.posts__container .post__create button:hover {
+  background-color: rgba(0, 128, 0, 0.7333333333);
+  cursor: pointer;
+}
+
+.create__desc {
+  font-family: "SW_font", sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #c0b534;
+  margin-bottom: 40px;
+}
+
+.post__form_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 75px;
+}
+.post__form_container .post__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+}
+.post__form_container .post__form label {
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 0;
+  margin-left: 19px;
+}
+.post__form_container .post__form #title {
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: black;
+  margin-left: 0;
+  height: 50px;
+  border-radius: 100px;
+  padding-left: 15px;
+}
+.post__form_container .post__form .post__textarea {
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: black;
+  margin-left: 0;
+  border-radius: 100px;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+.post__form_container .post__form .post__create_button {
+  height: 75px;
+  border-radius: 100px;
+  background-color: #008000;
+  font-family: "SW_font", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 0;
+  border: none;
+  transition: all 0.4s;
+}
+.post__form_container .post__form .post__create_button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 128, 0, 0.7333333333);
 }/*# sourceMappingURL=style.css.map */
