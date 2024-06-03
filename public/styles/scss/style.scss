@@ -526,6 +526,7 @@ body {
 .faq__container {
   display: flex;
   justify-content: center;
+  margin-top: 100px;
   .faq__accord {
     display: flex;
     flex-direction: column;
@@ -695,6 +696,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 50px;
   .post__container {
     display: flex;
     align-items: center;
@@ -721,7 +723,6 @@ body {
       width: 400px;
       height: 75px;
       @include fontsForText(0, white);
-      margin-top: 50px;
       margin-bottom: 50px;
       transition: all 0.4s;
     }
@@ -755,8 +756,6 @@ body {
       border-radius: 100px;
       padding-left: 15px;
     }
-    #text {
-    }
     .post__textarea {
       @include fontsForText(0, black);
       border-radius: 100px;
@@ -775,5 +774,84 @@ body {
       cursor: pointer;
       background-color: #008000bb;
     }
+  }
+}
+
+.change__status_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 210px;
+  .status__header {
+    font-size: 36px;
+    @include fontsForHeaders;
+    margin-bottom: 50px;
+  }
+  .status__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+    label {
+      @include fontsForText(0, white);
+      margin-left: 19px;
+    }
+    input:not([type="submit"]) {
+      @include fontsForText(0, black);
+      height: 50px;
+      border-radius: 100px;
+      padding-left: 15px;
+    }
+    input[type="submit"] {
+      height: 75px;
+      border-radius: 100px;
+      background-color: #008000;
+      @include fontsForText(0, white);
+      border: none;
+      transition: all 0.4s;
+    }
+    input[type="submit"]:hover {
+      background-color: #008000bb;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  #header__content {
+    flex-direction: column;
+    width: 100vw;
+    #header__left_content {
+      width: 100%;
+    }
+    #scene {
+      display: none;
+    }
+  }
+  .rain-container {
+    .project__info {
+      #info__media {
+        display: none;
+      }
+      .info__text {
+        width: 100%;
+      }
+    }
+  }
+  .project__about_clients {
+    .about__clients_gif {
+      display: none;
+    }
+    .about__clients_text {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .invite__gaming {
+    width: 100%;
+    margin-top: 25px;
+    margin-left: 10px;
+    gap: 40px;
+    flex-direction: column;
   }
 }

@@ -10,19 +10,15 @@ exports.getPage = function (req, res) {
   }
 };
 
-exports.createPost = function (req, res) {
+exports.createPost = async function (req, res) {
   if (req.session.name) {
-    // createPost(req.body, (err, )
+    const uuid = uuidv4();
+    await Post.create({
+      uuid: uuid,
+      title: req.body.title,
+      text: req.body.text,
+      author_email: req.session.email,
+    });
+    return res.redirect("/profile");
   }
 };
-
-async function createPost(dataFromForm, callback) {
-  const uuid = uuidv4();
-  const newPost = await Post.create({
-    uuid: uuid,
-    title: dataFromForm.title,
-    text: dataFromForm.text,
-    author_email: req.session.email,
-  });
-  return callback();
-}

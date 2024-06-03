@@ -2,7 +2,6 @@ const { User, Post } = require("../config/db");
 
 exports.getProfile = async function (req, res) {
   if (req.session.email) {
-    console.log(req.session);
     const role = req.session.role;
     const name = req.session.name;
     const email = req.session.email;
@@ -10,7 +9,6 @@ exports.getProfile = async function (req, res) {
     const userPosts = await Post.findAll({
       where: { author_email: res.locals.user.email },
     });
-    console.log(userPosts);
     return res.render("profile", {
       title: `Профиль ${req.session.name}`,
       role: role,
@@ -23,4 +21,30 @@ exports.getProfile = async function (req, res) {
   } else {
     return res.redirect("/register");
   }
+};
+
+exports.getPageStatus = async function (req, res) {
+  if (req.session.email) {
+    const role = req.session.role;
+    const name = req.session.name;
+    const email = req.session.email;
+    return res.render("changeStatus.ejs", {
+      title: `Смена статуса`,
+      role: role,
+      email: email,
+      username: name,
+    });
+  } else {
+    return res.redirect("/register");
+  }
+};
+
+exports.changeStatus = async function (req, res) {
+  try {
+    await User.update(
+      { status: req.body.status },
+      { where: { email: req.session.email } }
+    );
+    return res.redirect("/");
+  } catch (err) {}
 };

@@ -40,5 +40,7 @@ routes.get("/profile", profileModule.getProfile);
 
 routes.get("/profile/createPost", postModule.getPage);
 routes.post("/profile/createPost", postModule.createPost);
+routes.get("/profile/changeStatus", profileModule.getPageStatus);
+routes.post("/profile/changeStatus", profileModule.changeStatus);
 
 module.exports = routes;
