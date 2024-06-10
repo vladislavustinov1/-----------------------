@@ -27,6 +27,8 @@ routes.get("/login", function (req, res) {
 });
 routes.post("/login", loginModule.login);
 
+routes.get("/logout", loginModule.logout);
+
 routes.get("/questions", function (req, res) {
   const role = req.session.role;
   return res.render(`QandA`, { title: "ЧАВО", role: role });

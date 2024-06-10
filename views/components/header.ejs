@@ -14,7 +14,9 @@
           <a href="/questions" class="list__links">ЧАВО</a>
         </li>
         <li class="menu__list">
-          <a href="#" class="list__links">Дискорд</a>
+          <a href="https://discord.gg/ta8PdGctHM" class="list__links"
+            >Дискорд</a
+          >
         </li>
         <% if (!locals.user) { %>
         <li class="menu__list">
@@ -23,6 +25,9 @@
         <% } else { %>
         <li class="menu__list">
           <a href="/profile" class="list__links">Профиль</a>
+        </li>
+        <li class="menu__list">
+          <a href="/logout" class="list__links">Выход</a>
         </li>
         <% } %>
       </ul>

@@ -45,6 +45,6 @@ exports.changeStatus = async function (req, res) {
       { status: req.body.status },
       { where: { email: req.session.email } }
     );
-    return res.redirect("/");
+    return res.redirect("/profile");
   } catch (err) {}
 };
